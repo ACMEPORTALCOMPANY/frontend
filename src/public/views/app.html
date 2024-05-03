@@ -8,13 +8,20 @@
     <title>ACME PORTAL COMPANY</title>
 
     <script
-      src="https://unpkg.com/htmx.org@1.9.9"
-      integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX"
+      src="https://unpkg.com/htmx.org@1.9.12"
+      integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-  
+    <h1>ACME PORTAL COMPANY</h1>
+      <div id="screen">
+        {{if .IsLoggedIn}}
+          {{template "home-screen"}}
+        {{else}} 
+          {{template "auth-screen"}}
+        {{end}}
+      </div>
   </body>
 </html>
 {{end}}

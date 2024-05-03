@@ -1,0 +1,42 @@
+{{define "auth-screen"}}
+    {{template "auth-tabs"}}
+    {{template "auth-form" .}}
+{{end}}
+
+{{define "auth-tabs"}}
+<div>
+    <button hx-get="/loginForm" hx-target="#auth-form">login</button>
+    <button hx-get="/registerForm" hx-target="#auth-form">register</button>
+</div>
+{{end}}
+
+{{define "auth-form"}}
+    <div id="auth-form">
+        {{template "login-form" .}}
+    </div>
+{{end}}
+
+{{define "login-form"}}
+    <form>
+        <label for="handle">handle</label>
+        <input type="text" name="handle" required/>
+        <label for="password">password</label>
+        <input type="password" name="password" required/>
+        <input type="submit" value="login" hx-post="/login" hx-target="#screen"/>
+    </form>
+    <h4 style="color: red;">{{.Message}}</h4>
+{{end}}
+
+{{define "register-form"}}
+    <form>
+        <label for="handle">handle</label>
+        <input type="text" name="handle" required/>
+        <label for="handle">display name</label>
+        <input type="text" name="displayName" required/>
+        <label for="password">password</label>
+        <input type="password" name="password" required/>
+        <input type="password" name="confirmPassword" required/>
+        <input type="submit" value="register" hx-post="/register" hx-target="#auth-form"/>
+    </form>
+    <h4 style="color: red;">{{.Message}}</h4>
+{{end}}

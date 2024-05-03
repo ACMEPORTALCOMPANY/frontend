@@ -18,6 +18,11 @@ func main() {
 	}
 
 	e.GET("/", handler.App)
+	e.GET("/loginForm", handler.LoginForm)
+	e.GET("/registerForm", handler.RegisterForm)
+
+	e.POST("/login", handler.Login)
+	e.POST("/register", handler.Register)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
