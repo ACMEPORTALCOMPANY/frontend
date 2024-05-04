@@ -17,26 +17,30 @@
 {{end}}
 
 {{define "login-form"}}
-    <form>
-        <label for="handle">handle</label>
-        <input type="text" name="handle" required/>
-        <label for="password">password</label>
-        <input type="password" name="password" required/>
-        <input type="submit" value="login" hx-post="/login" hx-target="#screen"/>
-    </form>
-    <h4 style="color: red;">{{.Message}}</h4>
+    <div class="primary panel">
+        <form class="primary">
+            <label for="handle" class="primary">handle</label>
+            <input type="text" name="handle" required class="primary"/>
+            <label for="password" class="primary">password</label>
+            <input type="password" name="password" required class="primary"/>
+            <input type="submit" value="login" hx-post="/login" hx-target="#screen" class="primary"/>
+        </form>
+        <p class="error">{{.Message}}</p>
+    </div>
 {{end}}
 
 {{define "register-form"}}
-    <form>
-        <label for="handle">handle</label>
-        <input type="text" name="handle" required/>
-        <label for="handle">display name</label>
-        <input type="text" name="displayName" required/>
-        <label for="password">password</label>
-        <input type="password" name="password" required/>
-        <input type="password" name="confirmPassword" required/>
-        <input type="submit" value="register" hx-post="/register" hx-target="#auth-form"/>
-    </form>
-    <h4 style="color: red;">{{.Message}}</h4>
+    <div class="secondary panel">
+        <form class="secondary">
+            <label for="handle" class="secondary">handle</label>
+            <input type="text" name="handle" required class="secondary"/>
+            <label for="handle" class="secondary">display name</label>
+            <input type="text" name="displayName" required class="secondary"/>
+            <label for="password" class="secondary">password</label>
+            <input type="password" name="password" required class="secondary"/>
+            <input type="password" name="confirmPassword" required class="secondary"/>
+            <input type="submit" value="register" hx-post="/register" hx-target="#auth-form" class="secondary"/>
+        </form>
+        <p class="error">{{.Message}}</p>
+    </div>
 {{end}}

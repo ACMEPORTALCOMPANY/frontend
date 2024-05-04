@@ -12,7 +12,6 @@ func main() {
 	e := echo.New()
 
 	e.Static("/dist", "/dist")
-	e.Static("/img", "/img")
 	e.Renderer = &render.Renderer{
 		Templates: template.Must(template.ParseGlob("public/views/*.html")),
 	}

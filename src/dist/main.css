@@ -1,0 +1,45 @@
+* {
+    background-color: black;
+}
+
+input[type=text] {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+input[type=password] {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.panel {
+    border: 1px dashed;
+    border-radius: 7px;
+}
+
+.error {
+    color: red;
+    background-color: inherit;
+}
+
+.primary {
+    color: greenyellow;
+    background-color: darkgreen;
+    border-color: greenyellow;
+}
+
+.secondary {
+    color: cyan;
+    background-color: darkblue;
+    border-color: cyan;
+}
+
+#screen {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
