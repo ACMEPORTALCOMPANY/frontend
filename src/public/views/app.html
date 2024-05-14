@@ -15,14 +15,16 @@
     ></script>
   </head>
   <body>
-    <h1>ACME PORTAL COMPANY</h1>
-      <div id="screen">
+    <div id="screen">
+      <h1>ACME PORTAL COMPANY</h1>
+      <div id="content">
         {{if .IsLoggedIn}}
           {{template "home-screen"}}
         {{else}} 
           {{template "auth-screen"}}
         {{end}}
       </div>
+    </div>
   </body>
 </html>
 {{end}}

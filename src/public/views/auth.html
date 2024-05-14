@@ -4,9 +4,9 @@
 {{end}}
 
 {{define "auth-tabs"}}
-<div>
-    <button hx-get="/loginForm" hx-target="#auth-form">login</button>
-    <button hx-get="/registerForm" hx-target="#auth-form">register</button>
+<div class="tab-row">
+    <button hx-get="/loginForm" hx-target="#auth-form" class="green-theme tab">login</button>
+    <button hx-get="/registerForm" hx-target="#auth-form" class="blue-theme blue tab">register</button>
 </div>
 {{end}}
 
@@ -17,30 +17,30 @@
 {{end}}
 
 {{define "login-form"}}
-    <div class="primary panel">
-        <form class="primary">
-            <label for="handle" class="primary">handle</label>
-            <input type="text" name="handle" required class="primary"/>
-            <label for="password" class="primary">password</label>
-            <input type="password" name="password" required class="primary"/>
-            <input type="submit" value="login" hx-post="/login" hx-target="#screen" class="primary"/>
+    <div class="green-theme tab-panel">
+        <form>
+            <label for="handle">handle</label>
+            <input type="text" name="handle" required class="green-theme"/>
+            <label for="password">password</label>
+            <input type="password" name="password" required class="green-theme"/>
+            <input type="submit" value="login" hx-post="/login" hx-target="#content" class="green-theme"/>
         </form>
-        <p class="error">{{.Message}}</p>
+        <p class="error-theme">{{.Message}}</p>
     </div>
 {{end}}
 
 {{define "register-form"}}
-    <div class="secondary panel">
-        <form class="secondary">
-            <label for="handle" class="secondary">handle</label>
-            <input type="text" name="handle" required class="secondary"/>
-            <label for="handle" class="secondary">display name</label>
-            <input type="text" name="displayName" required class="secondary"/>
-            <label for="password" class="secondary">password</label>
-            <input type="password" name="password" required class="secondary"/>
-            <input type="password" name="confirmPassword" required class="secondary"/>
-            <input type="submit" value="register" hx-post="/register" hx-target="#auth-form" class="secondary"/>
+    <div class="blue-theme tab-panel">
+        <form>
+            <label for="handle">handle</label>
+            <input type="text" name="handle" required class="blue-theme"/>
+            <label for="handle">display name</label>
+            <input type="text" name="displayName" required class="blue-theme"/>
+            <label for="password">password</label>
+            <input type="password" name="password" required class="blue-theme"/>
+            <input type="password" name="confirmPassword" required class="blue-theme"/>
+            <input type="submit" value="register" hx-post="/register" hx-target="#auth-form" class="blue-theme"/>
         </form>
-        <p class="error">{{.Message}}</p>
+        <p class="error-theme">{{.Message}}</p>
     </div>
 {{end}}
